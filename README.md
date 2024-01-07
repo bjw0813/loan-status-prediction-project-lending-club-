@@ -23,3 +23,8 @@ Lending Club 대출 상태 불량 예측모형 개발
          
          - 불량(1): Charged Off / Default / Late (16~30 days) / Late (31-120 days)에 해당
 
+
+
+
+
+최종 예측모델로 MLP모델을 선정했고 정확도 약 0.83이 나왔습니다.
