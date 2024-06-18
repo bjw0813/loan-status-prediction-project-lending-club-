@@ -28,3 +28,11 @@ Lending Club 대출 상태 불량 예측모형 개발
 
 
 최종 예측모델로 MLP모델을 선정했고 정확도 약 0.83이 나왔습니다.
+
+
+
+
+그냥 get_dummies는 아예 못쓴다고 생각하시면 편할 것 같아요. get_dummies를 사용하면 어쩔 수 없이 test 데이터의 범주형 변수도 파악을 해야 한다는 전제가 깔려서 train과정에서 test데이터의 정보를 쓰기 때문에 그렇습니다. train data에 OneHotEncoder를 적용해서 사용하는건 괜찮습니다.  
+
+
+예를 들어드리면 0,1,2,3,4,5를 갖는 범주형 데이터가 있는데 train data에 0,1,2,3,5의 경우만 존재해서 get_dummies()를 쓰면 4가 반영되지 않습니다. 그런데 만약 test data에는 0,1,2,3,4,5가 전부 존재한다면 input data shape이(데이터의 열 개수) train data의 경우와 test data의 경우가 다르게 됩니다
